@@ -1,4 +1,3 @@
-"2019/09  Daily Trading Value/Volume of 2330 "
 "Date","Trade Volume","Trade Value","Opening Price","Highest Price","Lowest Price","Closing Price","Change","Transaction",
 "2019/09/02","14,776,854","3,800,453,292","258.00","258.00","256.00","257.50","-1.50","7,608",
 "2019/09/03","26,086,495","6,642,868,555","256.50","258.00","253.00","254.00","-3.50","11,210",
@@ -19,9 +18,3 @@
 "2019/09/25","23,244,163","6,144,037,875","262.50","266.00","262.00","266.00","+1.00","7,145",
 "2019/09/26","34,128,103","9,139,219,995","269.00","269.50","266.50","268.00","+2.00","11,861",
 "2019/09/27","44,242,817","12,021,629,536","271.50","272.50","271.00","272.00","+4.00","16,626",
-"Remarks:"
-" Symbols for Direction:+/-/ X represent Up/Down/Not compared.
-"
-"Today statistics cover regular trading, Odd-lot, After-hour Fixed Price, Block trading, but exclude Auction and Tender offers."
-"If the last digit of the 6 digit alphanumeric ETF security code is K, M, S or C, it is traded in foreign currency."
-

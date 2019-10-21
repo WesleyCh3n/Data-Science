@@ -8,9 +8,17 @@ import mysql.connector
 # # Then you can consume your data in a for loop
 # for i in mycursor:
 #     print(i)
+dflist = []
+dflist.append(pd.read_csv('/media/y0ch3n/Data/School/Data Science/HW02/STOCK_DAY_06.csv'))
+dflist.append(pd.read_csv('/media/y0ch3n/Data/School/Data Science/HW02/STOCK_DAY_07.csv'))
+dflist.append(pd.read_csv('/media/y0ch3n/Data/School/Data Science/HW02/STOCK_DAY_08.csv'))
+dflist.append(pd.read_csv('/media/y0ch3n/Data/School/Data Science/HW02/STOCK_DAY_09.csv'))
+dflist.append(pd.read_csv('/media/y0ch3n/Data/School/Data Science/HW02/STOCK_DAY_10.csv'))
+dflist[0] = dflist[0].iloc[:,0:8].copy()
 
-df = pd.read_csv('/media/y0ch3n/Data/School/Data Science/HW02/STOCK_DAY_06.csv')
-df1 = df.iloc[:,0:8]
-print(df1)
-# print(df.loc[datas[1:3]])
+for i in range(len(dflist)-1):
+	dflist[i+1] = dflist[i+1].iloc[:,0:8].copy()
+	dflist[0] = dflist[0].append(dflist[i+1], ignore_index=True)
 
+df = dflist[0]
+print(df)
