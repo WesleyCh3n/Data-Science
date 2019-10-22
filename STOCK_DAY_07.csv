@@ -1,4 +1,4 @@
-"Date","Trade Volume","Trade Value","Opening Price","Highest Price","Lowest Price","Closing Price","Change","Transaction",
+"Date","Trade_Volume","Trade_Value","Opening_Price","Highest_Price","Lowest_Price","Closing_Price","Change","Transaction",
 "2019/07/01","66,370,875","16,445,222,750","245.50","250.00","245.00","248.50","+9.50","29,551",
 "2019/07/02","26,832,202","6,671,951,743","249.50","250.00","247.50","249.00","+0.50","12,531",
 "2019/07/03","29,549,774","7,190,777,082","244.00","245.00","242.00","242.50","-6.50","16,033",
