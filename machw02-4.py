@@ -13,9 +13,7 @@ abs(df_np[:,4].astype(np.float64)-df_np[:,5].astype(np.float64))]
 avg = np.average(df_npNew, axis=0)
 std = np.std(df_npNew, axis=0)
 df_npNorm = (df_npNew-avg)/std
-
 avg = np.average(df_npNorm, axis=0)
-
 df_npL2 = ((df_npNorm-avg)**2).sum(axis=1)
 df_npL2 = np.sqrt(df_npL2)
 date = df_npL2.argsort()[-5:]
