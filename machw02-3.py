@@ -2,10 +2,10 @@ import pandas as pd
 import numpy as np
 import mysql.connector 
 from sqlalchemy import create_engine
-
+pd.set_option('display.max_columns', 50)
+pd.set_option('display.max_colwidth', 1000)
 df = pd.read_csv('/Users/YoChen/Documents/GitHub/Data-Science/totalStock.csv')
 df = df.iloc[:,1:9].copy()
-
 df1 = df.iloc[:,4]
 df2 = df.iloc[:,1]
 x = 0
