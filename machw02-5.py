@@ -6,7 +6,7 @@ dfClosingPirce = df.iloc[:,1:9].set_index('Date').loc[:,'Closing_Price'].copy()
 dfSort = dfClosingPirce.sort_values()
 dfMax = dfSort[(len(dfSort)-5):]
 dfMin = dfSort[0:5]
-dfDiff = pd.DataFrame(np.zeros((25,1)),dtype=float)
+dfDiff = pd.DataFrame(np.zeros((25,2)))
 diff = []
 for i in range(5):
 	for j in range(5):
