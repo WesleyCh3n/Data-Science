@@ -10,3 +10,4 @@ import numpy as np
 
 img = cv2.imread('/Users/YoChen/Documents/GitHub/Img-Processing/HW04/test.jpg',0)
 print('aa')
+print('ddd')
