@@ -32,15 +32,16 @@ Ld_holiday = Ld[:,7].flatten().astype(int)
 Ld_weekend = Ld[:,8].flatten().astype(int)
 Ld_season = Ld[:,9].flatten().astype(int)
 
-name = ['Temperature', 'Feeling Temperature', 'Humidity', 'Wind Speed']
-color = ['#2af423', '#ff7400', '#e300ff', '#1eb5ff']
-Ld_data = [Ld_t1, Ld_t2, Ld_hum, Ld_wind]
-fig = plt.figure()
-for i in range(4):
+# Show plot
+name = ['Temperature', 'Feeling Temperature', 'Humidity', 'Wind Speed', 'Weather', 'Season']
+color = ['#2af423', '#ff7400', '#e300ff', '#1eb5ff', '#94b1ee', '#660066']
+Ld_data = [Ld_t1, Ld_t2, Ld_hum, Ld_wind, Ld_weather, Ld_season]
+fig = plt.figure(figsize=[12.5, 7])
+for i in range(6):
     trend_line, text = reg(Ld_data[i], Ld_cnt)
-    ax = fig.add_subplot(2, 2, i+1)
-    ax.scatter(Ld_data[i], Ld_cnt, c = color[i], s = 2, alpha = 0.3)  
-    ax.scatter(Ld_data[i], trend_line, c = 'r', s = 2, alpha = 1)  
+    ax = fig.add_subplot(2, 3, i+1)
+    ax.scatter(Ld_data[i], Ld_cnt, c = color[i], s = 2, alpha = 0.3)    # plot data
+    ax.scatter(Ld_data[i], trend_line, c = 'r', s = 2, alpha = 1)       # plot line
     ax.text(0.03, 0.95, text, fontname = 'Arial', fontsize = 10, weight='bold', transform=ax.transAxes, va='top')
     ax.set_title(name[i])
 plt.show()
