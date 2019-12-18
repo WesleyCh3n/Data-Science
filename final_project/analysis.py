@@ -32,6 +32,7 @@ Ld_holiday = Ld[:,7].flatten().astype(int)
 Ld_weekend = Ld[:,8].flatten().astype(int)
 Ld_season = Ld[:,9].flatten().astype(int)
 
+
 # Show plot
 name = ['Temperature', 'Feeling Temperature', 'Humidity', 'Wind Speed', 'Weather', 'Season']
 color = ['#2af423', '#ff7400', '#e300ff', '#1eb5ff', '#94b1ee', '#660066']
