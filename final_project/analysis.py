@@ -32,6 +32,9 @@ Ld_holiday = Ld[:,7].flatten().astype(int)
 Ld_weekend = Ld[:,8].flatten().astype(int)
 Ld_season = Ld[:,9].flatten().astype(int)
 
+normData = np.c_[Ld_cnt, Ld_t1, Ld_t2, Ld_hum, Ld_wind, Ld_weather, Ld_holiday, Ld_weekend, Ld_season]
+print(normData.shape)
+np.savetxt('norm.csv', normData, delimiter=',')
 
 # Show plot
 name = ['Temperature', 'Feeling Temperature', 'Humidity', 'Wind Speed', 'Weather', 'Season']
