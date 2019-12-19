@@ -18,6 +18,7 @@ df['date'] = pd.to_datetime(df['timestamp'])
 df.drop(columns =['timestamp'], inplace = True)
 df = df[['date', 'cnt', 't1', 't2', 'hum', 'wind_speed', 'weather_code', 'is_holiday', 'is_weekend', 'season']]
 print(df)
+
 '''add year/month/day'''
 df['month'] = df['date'].dt.month
 df['year'] = df['date'].dt.year
