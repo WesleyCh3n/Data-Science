@@ -11,12 +11,11 @@ DC = df2.to_numpy()
 print(df.columns)   # show the columns name
 print(f'Total {Ld.shape[0]} data')
 
-
 sel = df.iloc[:,1:]
 coeffs = sel.corr().to_numpy()
 print(coeffs.shape)
-# pd.plotting.scatter_matrix(sel)
 matrix = sel.corr()
 chart = sn.heatmap(matrix, annot=True, cmap='seismic')
 chart.set_xticklabels(sel.columns, rotation=40)
+# pd.plotting.scatter_matrix(sel)
 plt.show()
