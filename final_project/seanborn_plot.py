@@ -26,7 +26,7 @@ df = df[['month', 'hr', 'cnt', 't1', 't2', 'hum', 'wind_speed', 'weather_code', 
 '''Grading Level(/500)'''
 print(df['cnt'].max()) # 7860
 for i in range(16):
-    df.loc[(i*500 < df['cnt']) & (df['cnt'] <=  (i+1)*500), 'cnt'] = i+1
+    df.loc[(i*500 < df['cnt']) & (df['cnt'] <= (i+1)*500), 'cnt'] = i+1
 
 print(df)
 df.to_csv('normalize-addtime-grade.csv', index=False)
