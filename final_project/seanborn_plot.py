@@ -6,17 +6,16 @@ import seaborn as sn
 df = pd.read_csv('./london.csv')
 Ld = df.to_numpy()
 print(df.columns)   # show the columns name
-print(f'Total {Ld.shape[0]} data')
 
+'''Normalizing'''
 df['t1'] = (df['t1'] - df['t1'].min()) / (df['t1'].max() - df['t1'].min())
 df['t2'] = (df['t2'] - df['t2'].min()) / (df['t2'].max() - df['t2'].min())
 df['hum'] = df['hum'] / df['hum'].max()
 df['wind_speed'] = df['wind_speed'] / df['wind_speed'].max()
-# df.to_csv('normal.csv', index=False)
 
+'''Change timestamp to readable datetime'''
 df['date'] = pd.to_datetime(df['timestamp'])
 df.drop(columns =['timestamp'], inplace = True)
-print(df)
 
 '''add year/month/day'''
 df['month'] = df['date'].dt.month
@@ -24,6 +23,7 @@ df['year'] = df['date'].dt.year
 df['hr'] = df['date'].dt.hour
 df = df[['month', 'hr', 'cnt', 't1', 't2', 'hum', 'wind_speed', 'weather_code', 'is_holiday', 'is_weekend', 'season']]
 
+'''Grading Level(/500)'''
 print(df['cnt'].max()) # 7860
 for i in range(16):
     df.loc[(i*500 < df['cnt']) & (df['cnt'] <=  (i+1)*500), 'cnt'] = i+1
