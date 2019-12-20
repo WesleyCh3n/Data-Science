@@ -33,6 +33,7 @@ print(df)
 # ax = sn.boxplot(x='hr', y='cnt', data=df)
 # ax = sn.boxenplot(x='hr', y='cnt', data=df)
 # plt.show()
+# plt.show()
 
 '''Monthly Count Distribution'''
 # ax = sn.violinplot(x='month', y='cnt', data=df)
