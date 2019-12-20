@@ -12,11 +12,10 @@ df['t1'] = (df['t1'] - df['t1'].min()) / (df['t1'].max() - df['t1'].min())
 df['t2'] = (df['t2'] - df['t2'].min()) / (df['t2'].max() - df['t2'].min())
 df['hum'] = df['hum'] / df['hum'].max()
 df['wind_speed'] = df['wind_speed'] / df['wind_speed'].max()
-df.to_csv('normal.csv', index=False)
+# df.to_csv('normal.csv', index=False)
 
 df['date'] = pd.to_datetime(df['timestamp'])
 df.drop(columns =['timestamp'], inplace = True)
-# df = df[['date', 'cnt', 't1', 't2', 'hum', 'wind_speed', 'weather_code', 'is_holiday', 'is_weekend', 'season']]
 print(df)
 
 '''add year/month/day'''
@@ -24,8 +23,13 @@ df['month'] = df['date'].dt.month
 df['year'] = df['date'].dt.year
 df['hr'] = df['date'].dt.hour
 df = df[['month', 'hr', 'cnt', 't1', 't2', 'hum', 'wind_speed', 'weather_code', 'is_holiday', 'is_weekend', 'season']]
+
+print(df['cnt'].max()) # 7860
+for i in range(16):
+    df.loc[(i*500 < df['cnt']) & (df['cnt'] <=  (i+1)*500), 'cnt'] = i+1
+
 print(df)
-df.to_csv('normalize-addtime.csv', index=False)
+df.to_csv('normalize-addtime-grade.csv', index=False)
 
 # print(df[df['month'] == 2]['cnt'].sum())
 # print([df[df['month'] == (i+1)]['cnt'].sum() for i in range(12)])
@@ -44,6 +48,7 @@ df.to_csv('normalize-addtime.csv', index=False)
 # ax = sn.boxplot(x='year', y='cnt', data=df)
 # plt.show()
 
+'''Correlation'''
 # sn.set(color_codes=True)
 # fig, axs = plt.subplots(2, 3)
 # name = ['t1', 't2', 'hum', 'wind_speed', 'weather_code', 'season']
