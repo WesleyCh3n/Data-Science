@@ -42,10 +42,10 @@ print(df)
 # ax = sn.boxplot(x='year', y='cnt', data=df)
 # plt.show()
 
-# sn.set(color_codes=True)
-# fig, axs = plt.subplots(2, 3)
-# name = ['t1', 't2', 'hum', 'wind_speed', 'weather_code', 'season']
-# for i in range(2):
-#     for j in range(3):
-#         chart = sn.regplot(name[2*i+j], 'cnt', df, scatter_kws={'s': 5, 'alpha':0.3}, line_kws={'color': 'red'}, ax=axs[i, j])
-# plt.show()
+sn.set(color_codes=True)
+fig, axs = plt.subplots(2, 3)
+name = ['t1', 't2', 'hum', 'wind_speed', 'weather_code', 'season']
+for i in range(2):
+    for j in range(3):
+        chart = sn.regplot(name[2*i+j], 'cnt', df, scatter_kws={'s': 5, 'alpha':0.3}, line_kws={'color': 'red'}, ax=axs[i, j])
+plt.show()
