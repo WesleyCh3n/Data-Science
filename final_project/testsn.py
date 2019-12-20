@@ -31,7 +31,7 @@ print(df)
 
 '''Hour Count Distribution'''
 # ax = sn.boxplot(x='hr', y='cnt', data=df)
-ax = sn.boxenplot(x='hr', y='cnt', data=df)
+# ax = sn.boxenplot(x='hr', y='cnt', data=df)
 plt.show()
 
 '''Monthly Count Distribution'''
