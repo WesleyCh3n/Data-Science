@@ -42,8 +42,6 @@ print(df)
 # ax = sn.boxplot(x='year', y='cnt', data=df)
 # plt.show()
 
-
-
 # sn.set(color_codes=True)
 # fig, axs = plt.subplots(2, 3)
 # name = ['t1', 't2', 'hum', 'wind_speed', 'weather_code', 'season']
