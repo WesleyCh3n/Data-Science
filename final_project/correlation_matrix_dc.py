@@ -4,15 +4,14 @@ import matplotlib.pyplot as plt
 import seaborn as sn
 
 # import data
-# df = pd.read_csv('./london.csv')
-df = pd.read_csv('./London-2015-2016.csv')
+df = pd.read_csv('./london.csv')
 df2 = pd.read_csv('./DC.csv')
 Ld = df.to_numpy()
 DC = df2.to_numpy()
 print(df.columns)   # show the columns name
 print(f'Total {Ld.shape[0]} data')
 
-sel = df.iloc[:,:]
+sel = df2.iloc[:,1:]
 coeffs = sel.corr().to_numpy()
 print(coeffs.shape)
 matrix = sel.corr()
